@@ -1,0 +1,48 @@
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="margin_nav_finance">
+    <a class="navbar-brand nav_heading" href="{% url 'Bank:home' %}">Fin<span class="nav_span">an</span>ces</a>
+      </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="margin_nav">
+      <div class="collapse navbar-collapse my_nav" id="navbarSupportedContent">
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="False">
+            Branches
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Malappuram">Malappuram</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Kozhikode">Kozhikode</a></li>
+<!--            <li><hr class="dropdown-divider"></li>-->
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Alappuzha">Alappuzha</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Ernakulam">Ernakulam</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Kannur">Kannur</a></li>
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Thiruvananthapuram">Thiruvananthapuram</a></li>
+          </ul>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <h5 class="nav_user nav_right" >{{user.username}}</h5>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active nav_right" aria-current="page" href="{% url 'Credentials:logout' %}">Logout</a>
+        </li>
+        {% else %}
+               <li class="nav-item">
+          <a class="nav-link active nav_right" aria-current="page" href="{% url 'Credentials:register' %}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active nav_right" aria-current="page" href="{% url 'Credentials:login' %}">Login</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+    </div>
+</nav>
+{% endblock %}

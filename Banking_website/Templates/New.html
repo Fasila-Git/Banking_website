@@ -1,0 +1,26 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}
+welcome | Banking Website
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+    <div class="col-md-6 col-sm-12">
+        <div>
+            <img class="new_img" src="{% static 'Images/background.jpg' %}" alt="image">
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12 new_right">
+        <div class="new_content">
+            <h2>Welcome</h2>
+            <p>Finance is a financial institution that is licensed to accept checking and
+                savings deposits and make loans. Banks also provide related services such as individual retirement
+                accounts (IRAs),
+                certificates of deposit (CDs), currency exchange, and safe deposit boxes.</p>
+            <a href="{% url 'Bank:bank_form' %}" class="btn btn-primary new_btn">Continue</a>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}

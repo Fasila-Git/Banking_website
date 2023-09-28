@@ -1,0 +1,24 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block metadescription %}
+India's No.1 Banking Website
+{% endblock %}
+{% block title %}
+Banking Website
+{% endblock %}
+{% block body %}
+<body id="bg" style="background-image: url('{% static 'Images/bg3.jpg' %}')">
+<div class="home_page">
+    <div>
+  <h1 class="home_heading">Banking Solutions</h1>
+        </div>
+    <div>
+    <p class="home_para">Finance is a financial institution that is licensed to accept checking and
+                savings deposits and make loans.The data will always be protected.
+        Allows you to set up automatic or recurring payments.</p>
+        </div>
+    <a href="{% url 'Credentials:login' %}" class="btn btn-primary home_btn" data-toggle="button" aria-pressed="false" autocomplete="off">get in touch</a>
+</div>
+
+{% endblock %}
+</body>

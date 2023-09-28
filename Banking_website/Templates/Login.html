@@ -1,0 +1,31 @@
+{% extends 'Base.html' %}
+{% block title %}
+Login | Banking Website
+{% endblock %}
+{% block body %}
+<body class="login_body">
+<form class="login_page" method="post">
+    {% csrf_token %}
+    <div class="form_content">
+        <h2 class="login_text">Login</h2>
+    <div class="input_box">
+    <input class="inp" type="text" name="username" placeholder="Username"><br>
+        </div>
+    <div class="input_box">
+    <input class="inp" type="password" name="password" placeholder="Password"><br>
+        </div>
+    <div class="input_box">
+        <button class="login_btn" name="login">Login</button>
+        </div>
+        <a class="log_link" href="{% url 'Credentials:register' %}">Register here</a>
+
+            <div class="log_msg">
+    {% for msg in messages %}
+    <b>{{msg}}</b>
+    {% endfor %}
+</div>
+        </div>
+</form>
+
+{% endblock %}
+</body>

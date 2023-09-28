@@ -1,0 +1,188 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+}
+#bg{
+    background-size: 1800px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.login_body{
+    background:#a2a2a8;
+}
+.login_page{
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align_items:center;
+
+}
+.login_text{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+    color:#110f21;
+}
+.inp{
+    height: 45px;
+    width: 235px;
+    border: none;
+    border-radius: 9px;
+    background:#e1e2f5;
+}
+.input_box{
+    padding:10px 1px;
+}
+.form_content{
+    background:white;
+    height:465px;
+    width:335px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:50px;
+}
+.login_btn{
+    height: 35px;
+    width: 95px;
+    border-radius: 18px;
+    border-color: #110f21;
+    background: #0d0c17;
+    color: white;
+    text-transform:uppercase;
+}
+.log_link{
+    text-decoration:none;
+    font-size:13px;
+    color:#110f21;
+}
+.log_msg{
+        margin-top: 20px;
+    color: red;
+    font-size: 17px;
+}
+.container{
+    height:100vh;
+    width:100vw;
+}
+.margin_nav{
+    margin-right:25px;
+}
+.margin_nav_finance{
+    margin-left:25px;
+}
+.nav_heading{
+    font-size:33px;
+}
+.nav_span{
+    color:#0d6efd;
+}
+.nav_user{
+   color:white;
+   margin:9px;
+}
+.nav_right{
+    font-size:19px;
+}
+.home_page{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.home_heading{
+    font-size: 68px;
+    color: white;
+    margin-bottom: 20px;
+    text-transform:uppercase;
+    font_weight:bold;
+}
+.home_para{
+    width:900px;
+    font-size:20px;
+    color:white;
+    margin-bottom:45px;
+}
+.home_btn{
+        font-size: 20px;
+    height: 50px;
+    width: 193px;
+    border-radius: 18px;
+    text-transform: CAPITALIZE;
+}
+.new_img{
+        height: 275px;
+    width: 425px;
+    margin: 180px 55px 170px 55px;
+}
+.new_content{
+        height: 321px;
+    width: 645px;
+}
+.new_content h2{
+    color:blue;
+    font-size:50px;
+    margin-bottom:10px;
+}
+.new_content p{
+    font-size:22px;
+    line-height:2rem;
+    color:black;
+}
+.new_right{
+    margin-top: 170px;
+    margin-bottom: 200px;
+}
+.new_btn{
+            font-size: 20px;
+    height: 45px;
+    width: 170px;
+    border-radius: 18px;
+    text-transform: CAPITALIZE;
+}
+.form_page{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+}
+.form_heading{
+        color: black;
+    margin: 20px 20px 40px 20px;
+}
+.form_margin{
+    margin-bottom: 10px;
+}
+.form_msg{
+        margin-bottom: 20px;
+    color: blue;
+    font-size: 17px;
+}
+.form_after_submit{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form_after_btn{
+    margin-top:35px;
+}
+.form_img{
+    margin-left:15px;
+    font-size:40px;
+}
+.form_data{
+    text-decoration:none;
+    font-size:15x;
+    color:black;
+}

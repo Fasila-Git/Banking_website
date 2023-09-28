@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group col-md-6">
+      <label for="inputdist">District</label>
+    <select id="inputdist" name="dist" class="form-control">
+        <option selected>Choose...</option>
+        {% for d in link %}
+        <option>{% url 'Bank:sluga' d.id %}</option>
+        {% endfor %}
+<!--        <option>Alappuzha</option>-->
+<!--        <option>Ernakulam</option>-->
+<!--        <option>Thirvananthapuram</option>-->
+<!--        <option>Kannur</option>-->
+<!--        <option>Thrissur</option>-->
+<!--        <option>Kozhikkode</option>-->
+    </select>
+    </div>
+<div class="form-group col-md-6 form_margin">
+      <label for="inpbranch">Branch</label>
+    <select id="inpbranch" name="branch" class="form-control">
+        <option selected>Choose...</option>
+<!--        {% if br.id  == link.id %}-->
+        {% for br in br %}
+        <option>{{br.name}}</option>
+        {% endfor %}
+<!--        {% endif %}-->
+<!--        <option>Kottakkal</option>&ndash;&gt;-->
+<!--        <option>Tirur</option>-->
+<!--        <option>Chemmad</option>-->
+<!--        <option>kondotty</option>-->
+<!--        {% for branch in branches %}-->
+<!--        <option>{{branch.branches}}</option>-->
+<!--        {% endfor %}-->
+<!--        <option>Alappuzha</option>-->
+<!--        <option>Ernakulam</option>-->
+<!--        <option>Thirvananthapuram</option>-->
+<!--        <option>Kannur</option>-->
+<!--        <option>Thrissur</option>-->
+<!--        <option>Kozhikkode</option>-->
+    </select>
+    </div>
+  </div>
+<!--{% for i in branches %}-->
+<!--{{i.dist_name}}-&#45;&#45;{{i.branches}}-->
+<!--{% endfor %}-->
+    </form>
+
+</body>
+</html>

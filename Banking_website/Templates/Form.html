@@ -1,0 +1,123 @@
+{% extends 'Base.html' %}
+{% block body %}
+<div class="form_page">
+    <div class="form_heading">
+        <h2>Give Your Details</h2>
+    </div>
+<form method="post" class="form-group">
+        {% csrf_token %}
+  <div class="row form_margin">
+    <div class="form-group col-md-6">
+      <label for="inputName">Name</label>
+      <input type="text" class="form-control" id="inputName" name="name" placeholder="Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputDob">Date Of Birth</label>
+      <input type="date" class="form-control" id="inputDob" name="DOB">
+    </div>
+  </div>
+    <div class="row form_margin">
+  <div class="form-group col-md-6">
+    <label for="age">Age</label>
+    <input type="text" class="form-control" id="age" name="age" placeholder="Enter your Age">
+  </div>
+    <div class="form-group col-md-6">
+    <label for="input">Phone Number</label>
+    <input type="text" class="form-control" id="input" name="pn" placeholder="Enter Your Phone number" maxlength="10">
+  </div>
+        </div>
+              <div class="form-group form_margin">
+    <label>Address</label>
+              <textarea class="form-control" placeholder="Enter your Address" name="address" rows="3"></textarea>
+  </div>
+        <div class="form-check form-check-inline form_margin">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male">
+  <label class="form-check-label" for="inlineRadio1">Male</label>
+</div>
+<div class="form-check form-check-inline form_margin">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female">
+  <label class="form-check-label" for="inlineRadio2">Female</label>
+</div>
+<div class="form-check form-check-inline form_margin">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Other">
+  <label class="form-check-label" for="inlineRadio3">Other</label>
+</div>
+        <div class="form-group form_margin">
+    <label for="inputmail">Email</label>
+    <input type="text" class="form-control" name="email" id="inputmail" placeholder="Enter Your Email">
+  </div>
+
+  <div class="row form_margin">
+    <div class="form-group col-md-6">
+      <label for="inputdist">District</label>
+    <select id="inputdist" name="dist" class="form-control">
+        <option selected>Choose...</option>
+        {% for dist in link %}
+        <option value="{{dist.id}}">{{dist.name}}</option>
+        {% endfor %}
+
+    </select>
+    </div>
+      <div class="form-group col-md-6 form_margin">
+      <label for="inpbranch">Branch</label>
+    <select id="inpbranch" name="branch" class="form-control">
+        <option value="">Choose...</option>
+
+    </select>
+    </div>
+  </div>
+        <div class="form-check form-check-inline form_margin">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="cc" value="credit card">
+  <label class="form-check-label" for="inlineCheckbox1">Credit Card</label>
+</div>
+<div class="form-check form-check-inline form_margin">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="cc" value="debit card">
+  <label class="form-check-label" for="inlineCheckbox2">Debit Card</label>
+</div>
+<div class="form-check form-check-inline form_margin">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="cc" value="check book">
+  <label class="form-check-label" for="inlineCheckbox3">Check Book</label>
+</div>
+        <div class="form_margin">
+  <button type="submit" class="btn btn-primary col-md-2">Submit</button>
+
+<a href="{% url 'Credentials:logout' %}" class="btn btn-primary">Logout</a>
+            </div>
+</form>
+    <div class="form_msg">
+    {% for msg in messages %}
+        <b>{{msg}}</b>
+    {% endfor %}
+        </div>
+    <div>
+        <a href="{% url 'Bank:home' %}" class="form_data">Go to home</a>
+    </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#inputdist').on('change', function() {
+      var districtId = $(this).val();
+      if (districtId) {
+        $.ajax({
+          url: '/get-branches/',  // URL to your Django view to fetch branches
+          data: {'district_id': districtId},
+          dataType: 'json',
+          success: function(data) {
+            $('#inpbranch').empty();
+            $('#inpbranch').append('<option value="" selected>Choose..</option>');
+            $.each(data.branches, function(key, value) {
+              $('#inpbranch').append('<option value="' + value.id + '">' + value.name + '</option>');
+            });
+          }
+        });
+      } else {
+        $('#inpbranch').empty();
+        $('#inpbranch').append('<option value="" selected>Choose...</option>');
+      }
+    });
+  });
+</script>
+
+{% endblock %}
