@@ -163,7 +163,7 @@ body{
 }
 .form_msg{
         margin-bottom: 20px;
-    color: blue;
+    color: red;
     font-size: 17px;
 }
 .form_after_submit{

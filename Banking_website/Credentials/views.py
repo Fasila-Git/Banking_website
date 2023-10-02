@@ -23,15 +23,24 @@ def register(request):
         username = request.POST['username']
         password = request.POST['password']
         confirm = request.POST['confirm']
-        if password == confirm:
-            if User.objects.filter(username=username).exists():
-                messages.info(request, 'Username already exist')
-            else:
-                user = User.objects.create_user(username=username, password=password)
-                user.save()
-                return redirect('/credentials/login')
+        if not username and not password and not confirm:
+            messages.info(request,'All fields are required')
+        elif not username:
+            messages.info(request,'You have not entered a username')
+        elif not password:
+            messages.info(request,'Please enter a password')
+        elif not confirm:
+            messages.info(request,'Please confirm your password')
         else:
-            messages.info(request, 'password and confirm must be same')
+            if password == confirm:
+                if User.objects.filter(username=username).exists():
+                    messages.info(request, 'Username already exist')
+                else:
+                    user = User.objects.create_user(username=username, password=password)
+                    user.save()
+                    return redirect('/credentials/login')
+            else:
+                messages.info(request, 'password and confirm must be same')
     return render(request, 'Register.html')
 
 
