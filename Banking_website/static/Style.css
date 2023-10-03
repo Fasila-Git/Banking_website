@@ -186,3 +186,23 @@ body{
     font-size:15x;
     color:black;
 }
+
+@media screen and (max-width: 768px){
+    #bg{
+        background-size: 611px 579px;
+    }
+    .home_heading{
+        font-size:28px;
+    }
+    .home_para{
+        font-size:18px;
+        text-align:center;
+        width:253px;
+
+    }
+    .home_btn{
+        font-size:19px;
+        width:160px;
+        height:38px;
+    }
+}
