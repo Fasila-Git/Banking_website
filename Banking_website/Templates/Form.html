@@ -1,4 +1,7 @@
 {% extends 'Base.html' %}
+{% block title %}
+Give Your Details | Banking Website
+{% endblock %}
 {% block body %}
 <div class="form_page">
     <div class="form_heading">
@@ -84,6 +87,11 @@
     <div class="form_msg">
         <p id="validation_errors">
 
+        </p>
+        <p>
+            {% for msg in messages %}
+            {{msg}}
+            {% endfor %}
         </p>
     </div>
 </form>

@@ -1,7 +1,7 @@
 {% extends 'Base.html' %}
 {% load static %}
 {% block title %}
-welcome | Banking Website
+We Solve Your Financial Problem | Banking Website
 {% endblock %}
 {% block body %}
 <div class="container">
@@ -13,12 +13,13 @@ welcome | Banking Website
     </div>
     <div class="col-sm-12 col-md-6 new_right">
         <div class="new_content">
-            <h2>Welcome</h2>
+            <h2>We Solve Your Financial Problem</h2>
             <p>Finance is a financial institution that is licensed to accept checking and
                 savings deposits and make loans. Banks also provide related services such as individual retirement
-                accounts (IRAs),
-                certificates of deposit (CDs), currency exchange, and safe deposit boxes.</p>
-            <a href="{% url 'Bank:bank_form' %}" class="btn btn-primary new_btn">Continue</a>
+                accounts,
+                certificates of deposit, currency exchange, and safe deposit boxes.<br>
+            To continue with our services please fill the form</p>
+            <a href="{% url 'Bank:bank_form' %}" class="btn btn-primary new_btn">View Form</a>
         </div>
     </div>
     </div>
